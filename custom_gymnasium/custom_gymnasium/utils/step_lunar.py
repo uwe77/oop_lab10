@@ -1,12 +1,10 @@
 import numpy as np
 import gymnasium as gym
+from gymnasium.envs.box2d.lunar_lander import *
 from typing import TYPE_CHECKING, Optional
-from custom_gymnasium.utils.init_lunar import INIT_LUNAR
-from custom_gymnasium.utils.reset_lunar import RESET_LUNAR
-from custom_gymnasium.utils.step_lunar import STEP_LUNAR
 
 
-class CustomLunarLander_v1(INIT_LUNAR, RESET_LUNAR, STEP_LUNAR):
+class STEP_LUNAR(LunarLander):
     def __init__(
         self,
         render_mode: Optional[str] = None,
@@ -15,8 +13,8 @@ class CustomLunarLander_v1(INIT_LUNAR, RESET_LUNAR, STEP_LUNAR):
         enable_wind: bool = False,
         wind_power: float = 15.0,
         turbulence_power: float = 1.5,):
-        INIT_LUNAR.__init__(
-            self=self,
+        self.helipad_y = None
+        super().__init__(
             render_mode=render_mode,
             continuous=continuous,
             gravity=gravity,
@@ -24,15 +22,13 @@ class CustomLunarLander_v1(INIT_LUNAR, RESET_LUNAR, STEP_LUNAR):
             wind_power=wind_power,
             turbulence_power=turbulence_power,
         )
-
-    def reset(
-        self,
+        # assert False
+    
+    def reset(self,
         *,
         seed: Optional[int] = None,
         options: Optional[dict] = None,):
-        return RESET_LUNAR.reset(self=self, 
-                                seed=seed,
-                                options=options)
-        
+        return
+    
     def step(self, action):
-        return STEP_LUNAR.step(self=self, action=action)
+        return super().step(action)
