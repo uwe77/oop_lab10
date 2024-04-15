@@ -11,8 +11,8 @@ from gymnasium.envs.box2d.lunar_lander import *
         and the parameter of deciding the shape of the lunar lander is LANDER_POLY.
 """
 # =====================type your code here=========================
-LANDER_POLY = [(-14, +30), (-17, 0), (-17, -10), (+17, -10), (+17, 0), (+14, +30)]
-LANDER_DENSITY = 5.0
+
+
 # =================================================================
 
 class CustomLunarLander_v1(LunarLander):
@@ -31,7 +31,8 @@ class CustomLunarLander_v1(LunarLander):
         # hint: you can use super() to excute superclass(LunarLander)'s previous reset function
         """
         # =====================type your code here=========================
-        super().reset(seed=seed, options=options)
+
+
         # =================================================================
 
 
