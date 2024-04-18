@@ -9,7 +9,7 @@ import add_path
 import warnings
 warnings.filterwarnings("ignore")
 
-env = gym.make('custom_gymnasium.envs:CustomLunarLander-v1', gravity= -5.0, turbulence_power = 1, render_mode="rgb_array")
+env = gym.make('custom_gymnasium.envs:CustomLunarLander-v1', gravity= -5.0, fuel=100, turbulence_power = 1, render_mode="rgb_array")
 env.reset()
 env.render()
 def callback(obs_t, obs_tp1, action, rew, terminated, truncated, info):

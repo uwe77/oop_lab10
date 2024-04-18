@@ -13,7 +13,6 @@ class STEP_LUNAR(LunarLander):
         enable_wind: bool = False,
         wind_power: float = 15.0,
         turbulence_power: float = 1.5,):
-        self.helipad_y = None
         super().__init__(
             render_mode=render_mode,
             continuous=continuous,
@@ -22,12 +21,12 @@ class STEP_LUNAR(LunarLander):
             wind_power=wind_power,
             turbulence_power=turbulence_power,
         )
-        # assert False
     
     def reset(self,
         *,
         seed: Optional[int] = None,
         options: Optional[dict] = None,):
+        super().reset(seed=seed, options=options)
         return
     
     def step(self, action):

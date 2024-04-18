@@ -12,7 +12,8 @@ class INIT_LUNAR(LunarLander):
         gravity: float = -10.0,
         enable_wind: bool = False,
         wind_power: float = 15.0,
-        turbulence_power: float = 1.5,):
+        turbulence_power: float = 1.5,
+        fuel: float = 100,):
         super().__init__(
             render_mode=render_mode,
             continuous=continuous,
@@ -21,12 +22,13 @@ class INIT_LUNAR(LunarLander):
             wind_power=wind_power,
             turbulence_power=turbulence_power,
         )
+        self.fuel = fuel
     
     def reset(self,
         *,
         seed: Optional[int] = None,
         options: Optional[dict] = None,):
-        return
+        assert False
     
     def step(self, action):
-        return
+        assert False

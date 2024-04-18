@@ -3,20 +3,10 @@ import gymnasium as gym
 from gymnasium.envs.box2d.lunar_lander import *
 from typing import TYPE_CHECKING, Optional
 LANDER_DENSITY = 5.0
-
-
-"""
-# task: change the shape of the lunar lander to a custom shape just like a rocket
-
-# hint: you can check the file of box2d/lunar_lander.py to see how the lunar lander is defined,
-        and the parameter of deciding the shape of the lunar lander is LANDER_POLY.
-"""
-# =====================type your code here=========================
 LANDER_POLY = [(-14, +30), (-17, 0), (-17, -10), (+17, -10), (+17, 0), (+14, +30)]
-# =================================================================
 
 
-class RESET_LUNAR(LunarLander):
+class BASE_LANDER(LunarLander):
     def __init__(
         self,
         render_mode: Optional[str] = None,
@@ -24,7 +14,8 @@ class RESET_LUNAR(LunarLander):
         gravity: float = -10.0,
         enable_wind: bool = False,
         wind_power: float = 15.0,
-        turbulence_power: float = 1.5,):
+        turbulence_power: float = 1.5,
+        fuel: int = 100,):
         super().__init__(
             render_mode=render_mode,
             continuous=continuous,
@@ -33,14 +24,15 @@ class RESET_LUNAR(LunarLander):
             wind_power=wind_power,
             turbulence_power=turbulence_power,
         )
+        self.total_fuel = fuel
     
     def reset(self,
         *,
         seed: Optional[int] = None,
         options: Optional[dict] = None,):
-
+        self.fuel = self.total_fuel
         super().reset(seed=seed, options=options)
-
+        
         # Create Lander body
         initial_y = VIEWPORT_H / SCALE
         initial_x = VIEWPORT_W / SCALE / 2
@@ -119,4 +111,12 @@ class RESET_LUNAR(LunarLander):
         return self.step(np.array([0, 0]) if self.continuous else 0)[0], {}
     
     def step(self, action):
-        return
+        
+        if self.fuel <= 0:
+            action = 0
+        else:
+            if action > 0:
+                self.fuel -= 1
+
+        obs, reward, terminated, truncation, info = super().step(action)
+        return obs, reward, terminated, truncation, info
