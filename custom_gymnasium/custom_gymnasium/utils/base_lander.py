@@ -24,13 +24,14 @@ class BASE_LANDER(LunarLander):
             wind_power=wind_power,
             turbulence_power=turbulence_power,
         )
-        self.total_fuel = fuel
-    
+
     def reset(self,
         *,
         seed: Optional[int] = None,
         options: Optional[dict] = None,):
-        self.fuel = self.total_fuel
+
+        # self.fuel = self.total_fuel
+
         super().reset(seed=seed, options=options)
         
         # Create Lander body
@@ -111,12 +112,5 @@ class BASE_LANDER(LunarLander):
         return self.step(np.array([0, 0]) if self.continuous else 0)[0], {}
     
     def step(self, action):
-        
-        if self.fuel <= 0:
-            action = 0
-        else:
-            if action > 0:
-                self.fuel -= 1
-
         obs, reward, terminated, truncation, info = super().step(action)
         return obs, reward, terminated, truncation, info
