@@ -14,8 +14,7 @@ class BASE_LANDER(LunarLander):
         gravity: float = -10.0,
         enable_wind: bool = False,
         wind_power: float = 15.0,
-        turbulence_power: float = 1.5,
-        fuel: int = 100,):
+        turbulence_power: float = 1.5):
         super().__init__(
             render_mode=render_mode,
             continuous=continuous,
@@ -29,8 +28,6 @@ class BASE_LANDER(LunarLander):
         *,
         seed: Optional[int] = None,
         options: Optional[dict] = None,):
-
-        # self.fuel = self.total_fuel
 
         super().reset(seed=seed, options=options)
         
@@ -112,5 +109,5 @@ class BASE_LANDER(LunarLander):
         return self.step(np.array([0, 0]) if self.continuous else 0)[0], {}
     
     def step(self, action):
-        obs, reward, terminated, truncation, info = super().step(action)
-        return obs, reward, terminated, truncation, info
+        state, reward, terminated, truncation, info = super().step(action)
+        return state, reward, terminated, truncation, info
