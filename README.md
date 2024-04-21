@@ -18,39 +18,30 @@ graph RL
 
 ## LAB
 ### Task:
-Add a fuel system into Custom Lander. (oop_lab9/custom_gymnasium/custom_gymnasium/envs/custom_lunarlander.py)
-
-Add an input parameter to specify the total fuel when initializing Custom Lander.
-
-Ensure that the lander's fuel decreases when its action is not zero.
-
+Add a fuel system into Custom Lander. (oop_lab9/custom_gymnasium/custom_gymnasium/envs/custom_lunarlander.py) </b>
+Add an input parameter to specify the total fuel when initializing Custom Lander.</b>
+Ensure that the lander's fuel decreases when its action is not zero.</b>
 Reset the fuel when Custom Lander is reset.
 
 ### Hint:
-You'll need to use super() to call the parent class's constructor{init(), reset(), step()}.
-
-Then you can integrate the fuel system into Custom Lander.
-
+You'll need to use super() to call the parent class's constructor{init(), reset(), step()}.</b>
+Then you can integrate the fuel system into Custom Lander.</b>
 Please ensure that you specify the input and output requirements of each function.
 
 ### You can refer to the code from the file location below
-oop_lab9/custom_gymnasium/custom_gymnasium/envs/box2d/lunar_lander.py
-
-oop_lab9/custom_gymnasium/custom_gymnasium/envs/utils/base_lander.py
-
+oop_lab9/custom_gymnasium/custom_gymnasium/envs/box2d/lunar_lander.py</b>
+oop_lab9/custom_gymnasium/custom_gymnasium/envs/utils/base_lander.py</b>
 oop_lab9/custom_gymnasium/custom_gymnasium/envs/custom_lunarlander.py
 
 ## How To Run
 First, enter the Docker and set up the environment by following the commands below.
-
 ```
 cd ~/oop_lab9
 source Docker/docker_run.sh
 source environment.sh
 ```
 
-If you've completed the missing code, you can run the custom lander by following the commands below.
-
+If you've completed the missing code, you can run the custom lander by following the commands below.</b>
 (Ensure that your terminal is inside the Docker environment where the setup has been completed.)
 ```
 cd ~/oop_lab9/scripts
