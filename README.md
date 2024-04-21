@@ -33,8 +33,6 @@ oop_lab9/custom_gymnasium/custom_gymnasium/envs/box2d/lunar_lander.py
 oop_lab9/custom_gymnasium/custom_gymnasium/envs/utils/base_lander.py
 oop_lab9/custom_gymnasium/custom_gymnasium/envs/custom_lunarlander.py
 
-
-
 ## How To Run
 First, enter the Docker and set up the environment by following the commands below.
 ```
@@ -47,6 +45,8 @@ If you've completed the missing code, you can run the custom lander by following
 cd ~/oop_lab9/scripts
 python3 play_lunarlander.py
 ```
+Or you can just follow the gif...
+<img src="./images/howtolaunch.gif"/>
 
 ## How should it looks like
 <img src="./images/customlander.gif"/>
