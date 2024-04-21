@@ -16,6 +16,25 @@ graph RL
     id3--inherit-->id2--inherit-->id1
 ```
 
+## LAB
+### Task:
+Add a fuel system into Custom_Lander. (oop_lab9/custom_gymnasium/custom_gymnasium/envs/custom_lander.py)
+Add an input parameter to specify the total fuel when initializing Custom_Lander.
+Ensure that the lander's fuel decreases when its action is not zero.
+Reset the fuel when Custom_Lander is reset.
+
+### Hint:
+You'll need to use super() to call the parent class's constructor{init(), reset(), step()}.
+Then you can integrate the fuel system into Custom_Lander.
+Please ensure that you specify the input and output requirements of each function.
+
+### You can refer to the code from the file location below:
+oop_lab9/custom_gymnasium/custom_gymnasium/envs/box2d/lunar_lander.py
+oop_lab9/custom_gymnasium/custom_gymnasium/envs/utils/base_lander.py
+oop_lab9/custom_gymnasium/custom_gymnasium/envs/custom_lander.py
+
+
+
 ## How To Run
 First enter docker and setup the environment by following the commands below.
 ```
@@ -23,7 +42,7 @@ cd ~/oop_lab9
 source Docker/docker_run.sh
 source environment.sh
 ```
-If you completed the missing code, you can run the custom lander by following the commands below.(make sure you're inside the docker that has setup the environment)
+If you completed the missing code, you can run the custom lander by following the commands below.(make sure your terminate is inside the docker that has setup the environment)
 ```
 cd ~/oop_lab9/scripts
 python3 play_lunarlander.py
