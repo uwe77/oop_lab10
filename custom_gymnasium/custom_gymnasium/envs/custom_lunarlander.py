@@ -13,9 +13,7 @@ class CustomLunarLander_v1(BASE_LANDER):
         wind_power: float = 15.0,
         turbulence_power: float = 1.5,
         fuel: float = 100,):
-        """
-        task: Use super() function to excute 
-        """
+
         # =====================type your code here=====================
         super().__init__(
             render_mode=render_mode,
@@ -24,7 +22,6 @@ class CustomLunarLander_v1(BASE_LANDER):
             enable_wind=enable_wind,
             wind_power=wind_power,
             turbulence_power=turbulence_power,
-            fuel=fuel,
         )
         self.__total_fuel = fuel
         # =============================================================
