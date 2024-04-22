@@ -13,12 +13,12 @@ class dog(animal):
     def speak(self):
         print("WOFF!! I'm", self)
 
-class mazigou(dog, animal):
-    def __init__(self, name='you', age=18):
+class karen(dog, animal):
+    def __init__(self, name='karen', age=48):
         super().__init__(name, age)
     def speak(self):
         animal.speak(self)
-    def talktogirlfriend(self):
+    def shout2ppl(self):
         super().speak()
 
 if __name__ == "__main__":
@@ -26,6 +26,6 @@ if __name__ == "__main__":
     a.speak()
     d = dog()
     d.speak()
-    m = mazigou()
+    m = karen()
     m.speak()
-    m.talktogirlfriend()
+    m.shout2ppl()
