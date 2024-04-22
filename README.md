@@ -1,6 +1,12 @@
 # LAB8
 
-## Class Diagram
+## Clone this repo
+```
+cd ~/
+git clone https://github.com/uwe77/oop_lab8.git
+```
+## LAB
+### Class Diagram
 
 ```mermaid
 graph RL
@@ -15,8 +21,6 @@ graph RL
     id2-.-Function
     id3--inherit-->id2--inherit-->id1
 ```
-
-## LAB
 ### Task:
 Add a fuel system into Custom Lander.
 Add an input parameter to specify the total fuel when initializing Custom Lander.
