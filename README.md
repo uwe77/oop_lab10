@@ -57,3 +57,6 @@ Or you can just follow the gif...
 
 ## How should it looks like
 <img src="./images/customlander.gif"/>
+
+## How to play
+Use the 'w', 'a', 'd' keys to control the main, right, and left engines, respectively, and try to land in the area between the two flags before running out of fuel.
